@@ -4,12 +4,12 @@
     {
         static void Main(string[] args)
         {
-            var problem = new _4_MedianOfTwoSortedArrays();
+            var problem = new _11_ContainerWithMostWater();
 
-            var nums1 = new int[] { 1, 2 };
-            var nums2 = new int[] { 3, 4, 5 };
+            //int[] height = new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+            int[] height = new int[] { 1, 1 };
 
-            var result = problem.FindMedianSortedArrays(nums1, nums2);
+            var result = problem.MaxArea(height);
 
             Console.WriteLine(result);
         }
