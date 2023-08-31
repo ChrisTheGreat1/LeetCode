@@ -30,7 +30,7 @@ namespace LeetCode
 
     */
 
-    internal class _16_3SumClosest
+    internal class _0016_3SumClosest
     {
         //int[] nums = new int[] { -1, 2, 1, -4 };
         //int[] nums = new int[] { 0, 0, 0 };

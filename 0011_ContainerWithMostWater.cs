@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LeetCode
 {
     /*
-     
+
     You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the
     ith line are (i, 0) and (i, height[i]).
 
@@ -22,7 +22,7 @@ namespace LeetCode
     // int[] height = new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
     // int[] height = new int[] { 1, 1 };
 
-    internal class _11_ContainerWithMostWater
+    internal class _0011_ContainerWithMostWater
     {
         // O(n) solution:
         public int MaxArea(int[] height)

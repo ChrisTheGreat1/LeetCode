@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetCode
 {
-    public class _0_Add2Numbers
+    public class _0000_Add2Numbers
     {
         public int Sum(int num1, int num2)
         {

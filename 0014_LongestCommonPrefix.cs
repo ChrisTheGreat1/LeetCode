@@ -28,7 +28,7 @@ namespace LeetCode
 
     */
 
-    internal class _14_LongestCommonPrefix
+    internal class _0014_LongestCommonPrefix
     {
         //var strs = new string[] { "flower", "flow", "flight" };
         //var strs = new string[] { "dog", "racecar", "car" };

@@ -1,7 +1,7 @@
 ﻿namespace LeetCode
 {
     // Given a string s, find the length of the longest substring without repeating characters.
-    internal class _3_LongestSubstringWithoutRepeatingCharacters
+    internal class _0003_LongestSubstringWithoutRepeatingCharacters
     {
         public int LengthOfLongestSubstring(string inputString)
         {
@@ -12,7 +12,7 @@
 
             while (pointerA < inputString.Length)
             {
-                if (!hash_set.Contains( inputString[pointerA] ))
+                if (!hash_set.Contains(inputString[pointerA]))
                 {
                     hash_set.Add(inputString[pointerA]);
                     pointerA++;

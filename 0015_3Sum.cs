@@ -36,7 +36,7 @@ namespace LeetCode
 
     */
 
-    internal class _15_3Sum
+    internal class _0015_3Sum
     {
         // int[] nums = new int[] { -1, 0, 1, 2, -1, -4 };
 

@@ -6,17 +6,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+
 namespace LeetCode
 {
     /*
-     
-    Given two sorted arrays nums1 and nums2 of size m and n respectively, 
+
+    Given two sorted arrays nums1 and nums2 of size m and n respectively,
     return the median of the two sorted arrays.
 
     The overall run time complexity should be O(log (m+n)).
 
     */
-    internal class _4_MedianOfTwoSortedArrays
+
+    internal class _0004_MedianOfTwoSortedArrays
     {
         public double FindMedianSortedArrays(int[] nums1, int[] nums2)
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LeetCode
 {
     // Given an integer x, return true if x is a palindrome, and false otherwise.
-    internal class _9_PalindromeNumber
+    internal class _0009_PalindromeNumber
     {
         public bool IsPalindrome(int x)
         {
@@ -26,7 +26,7 @@ namespace LeetCode
         }
 
         /*
-         
+
         // Optimal solution:
 
         var y = x.ToString().ToCharArray();
