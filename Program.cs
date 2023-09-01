@@ -4,11 +4,11 @@
     {
         static void Main(string[] args)
         {
-            var problem = new _0016_3SumClosest();
+            var problem = new _0022_GenerateParentheses();
 
-            // var result = problem.ThreeSumClosest(nums, 1);
+            var result = problem.GenerateParenthesis(2);
 
-            // Console.WriteLine(result);
+            Console.WriteLine(result);
         }
     }
 }
