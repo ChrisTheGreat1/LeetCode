@@ -33,32 +33,40 @@ namespace LeetCode
     {
         public int LongestValidParentheses(string s)
         {
-            int longest = 0;
-
-            for (int i = 0; i < s.Length - 1; i++)
+            Stack<int> index = new Stack<int>();
+            for (int i = 0; i < s.Length; i++)
             {
-                CheckLength(i, s, longest, 0, 0);
+                if (s[i] == '(')
+                {
+                    index.Push(i);
+                }
+                else
+                {
+                    if (index.Any() && s[index.Peek()] == '(')
+                    {
+                        index.Pop();
+                    }
+                    else
+                    {
+                        index.Push(i);
+                    }
+                }
             }
-
-            return longest;
-        }
-
-        private void CheckLength(int i, string s, int longest, int numOpen, int numClosed)
-        {
-            //if (i >= s.Length - 1)
-            //{
-            //    longest
-            //}
-
-            if (s[i] == '(')
+            if (!index.Any())
             {
-                CheckLength(i + 1, s, longest, ++numOpen, numClosed);
+                return s.Length;
             }
-            else
+            int length = s.Length, unwanted = 0;
+            int result = 0;
+            while (index.Any())
             {
-                longest++;
-                CheckLength(i + 1, s, longest, numOpen, ++numClosed);
+                unwanted = index.Peek();
+                index.Pop();
+                result = Math.Max(result, length - unwanted - 1);
+                length = unwanted;
             }
+            result = Math.Max(result, length);
+            return result;
         }
     }
 }

@@ -4,21 +4,11 @@
     {
         static void Main(string[] args)
         {
-            var problem = new _0032_LongestValidParentheses(); // TODO: 0032
+            var problem = new _0347_TopKFrequentElements();
 
-            var result = problem.LongestValidParentheses(s);
+            //var result = problem.TopKFrequent(nums, k);
 
-            Console.WriteLine(result);
+            //Console.WriteLine(result);
         }
     }
-
-    /*
-        var problem = new _0032_LongestValidParentheses(); // TODO: 0032
-
-        string s = "(()";
-        //string s = ")()())";
-        //string s = "";
-
-        var result = problem.LongestValidParentheses(s);
-    */
 }
