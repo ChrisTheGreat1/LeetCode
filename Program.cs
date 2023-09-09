@@ -4,11 +4,16 @@
     {
         static void Main(string[] args)
         {
-            var problem = new _0347_TopKFrequentElements();
+            var problem = new _0020_ValidParentheses();
 
-            //var result = problem.TopKFrequent(nums, k);
+            //var s = "()";
+            //var s = "()[]{}";
+            //var s = "(]";
+            var s = "(())";
 
-            //Console.WriteLine(result);
+            var result = problem.IsValid(s);
+
+            Console.WriteLine(result);
         }
     }
 }
