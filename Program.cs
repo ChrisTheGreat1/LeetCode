@@ -4,14 +4,9 @@
     {
         static void Main(string[] args)
         {
-            var problem = new _0020_ValidParentheses();
+            var problem = new _0739_DailyTemperatures();
 
-            //var s = "()";
-            //var s = "()[]{}";
-            //var s = "(]";
-            var s = "(())";
-
-            var result = problem.IsValid(s);
+            var result = problem.DailyTemperatures(temperatures);
 
             Console.WriteLine(result);
         }
