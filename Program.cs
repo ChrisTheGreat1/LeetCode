@@ -4,11 +4,11 @@
     {
         static void Main(string[] args)
         {
-            var problem = new _0567_PermutationInString();
+            var problem = new _0543_DiameterOfBinaryTree();
 
+            problem.Result();
 
-
-            Console.WriteLine(result);
+            //Console.WriteLine(result);
         }
     }
 }
