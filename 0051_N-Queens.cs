@@ -39,7 +39,6 @@ namespace LeetCode
             {
                 board.Add(new StringBuilder(n));
                 board[i].Append('.', n);
-
             }
             backtrackingNQueens(n, 0, board, result, new HashSet<(int i, int j)>(), new HashSet<(int i, int j)>(), new HashSet<(int i, int j)>());
             return result;
