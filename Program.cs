@@ -4,11 +4,13 @@
     {
         static void Main(string[] args)
         {
-            var problem = new _0543_DiameterOfBinaryTree();
+            var problem = new _0040_CombinationSum2();
 
-            problem.Result();
+            var nums = new int[] { 2, 5, 2, 1, 2 };
 
-            //Console.WriteLine(result);
+            var result = problem.CombinationSum2(nums, 5);
+
+            Console.WriteLine(result);
         }
     }
 }

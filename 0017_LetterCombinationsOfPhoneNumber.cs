@@ -60,11 +60,11 @@ namespace LeetCode
             return combinations;
         }
 
-        private void AddCombination(string curr, string digits, int index, IList<string> list)
+        private void AddCombination(string curr, string digits, int index, IList<string> combinations)
         {
             if (index >= digits.Length)
             {
-                list.Add(curr);
+                combinations.Add(curr);
             }
             else
             {
@@ -74,7 +74,7 @@ namespace LeetCode
                 {
                     string newCurr = curr + map[i];
 
-                    AddCombination(newCurr, digits, index + 1, list);
+                    AddCombination(newCurr, digits, index + 1, combinations);
                 }
             }
         }
