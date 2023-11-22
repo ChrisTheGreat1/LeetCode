@@ -4,13 +4,21 @@
     {
         static void Main(string[] args)
         {
-            var problem = new _0621_TaskScheduler();
+            var problem = new _0695_MaxAreaOfIsland();
 
-            // tasks = ["A","A","A","A","A","A","B","C","D","E","F","G"], n = 2
-            var tasks = new char[] { 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'C', 'D', 'E', 'F', 'G' };
-            var n= 2;
+            int[][] array = new int[][]
+            {
+                new int[] {0,0,1,0,0,0,0,1,0,0,0,0,0},
+                new int[] {0,0,0,0,0,0,0,1,1,1,0,0,0},
+                new int[] {0,1,1,0,1,0,0,0,0,0,0,0,0},
+                new int[] {0,1,0,0,1,1,0,0,1,0,1,0,0},
+                new int[] {0,1,0,0,1,1,0,0,1,1,1,0,0},
+                new int[] {0,0,0,0,0,0,0,0,0,0,1,0,0},
+                new int[] {0,0,0,0,0,0,0,1,1,1,0,0,0},
+                new int[] {0,0,0,0,0,0,0,1,1,0,0,0,0}
+            };
 
-            var result = problem.LeastInterval(tasks, n);
+            var result = problem.MaxAreaOfIsland(array);
 
             Console.WriteLine(result);
         }

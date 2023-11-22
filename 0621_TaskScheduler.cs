@@ -47,107 +47,114 @@ namespace LeetCode
 
     */
 
+    /*
+
+    // tasks = ["A","A","A","A","A","A","B","C","D","E","F","G"], n = 2
+    var tasks = new char[] { 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'C', 'D', 'E', 'F', 'G' };
+    var n= 2;
+
+    */
 
 
-    internal class _0621_TaskScheduler
+internal class _0621_TaskScheduler
+{
+    // Use priority queue so that the most frequent letter is processed first.
+    // Then use a queue to keep track of when that character can be processed again,
+    // so that you can always maximize your time spent processing other letters
+
+    private PriorityQueue<FreqClass, int> pq;
+    private Dictionary<char, int> dictionary;
+
+    public int LeastInterval(char[] tasks, int n)
     {
-        // Use priority queue so that the most frequent letter is processed first.
-        // Then use a queue to keep track of when that character can be processed again,
-        // so that you can always maximize your time spent processing other letters
+        // Count tasks in the array
+        if (n == 0) return tasks.Length;
 
-        private PriorityQueue<FreqClass, int> pq;
-        private Dictionary<char, int> dictionary;
+        dictionary = new Dictionary<char, int>();
 
-        public int LeastInterval(char[] tasks, int n)
+        // Count frequency of each letter
+        foreach (var task in tasks)
         {
-            // Count tasks in the array
-            if (n == 0) return tasks.Length;
-
-            dictionary = new Dictionary<char, int>();
-
-            // Count frequency of each letter
-            foreach (var task in tasks)
+            if (dictionary.ContainsKey(task))
             {
-                if (dictionary.ContainsKey(task))
-                {
-                    dictionary[task]++;
-                }
-                else dictionary.Add(task, 1);
+                dictionary[task]++;
             }
-
-            pq = new PriorityQueue<FreqClass, int>(new MaxHeap());
-
-            var time = 0;
-
-            AddItemsToPQ();
-
-            while (pq.Count > 0)
-            {
-                var list = new List<FreqClass>();
-                var cnt = 0;
-                for (var i = 0; i < n + 1; i++)
-                {
-                    if (pq.Count > 0)
-                    {
-                        var item = pq.Dequeue(); // Get most frequent item
-                        cnt++;
-                        //Console.WriteLine($"Dequeued {item.Task} with frequency : {item.Frequency}");
-                        item.Frequency--;
-                        if (item.Frequency > 0)
-                            list.Add(item);
-                    }
-                }
-
-                for (var i = 0; i < list.Count; i++)
-                {
-                    var item = list[i];
-                    //Console.WriteLine($"Enqueued {item.Task} with frequency : {item.Frequency}");
-                    pq.Enqueue(item, item.Frequency);
-                }
-
-                if (pq.Count == 0)
-                {
-                    time += cnt;
-                }
-                else
-                {
-                    time += n + 1;
-                }
-
-                //Console.WriteLine($"Done with iteration, current time: {time}");
-            }
-
-            return time;
+            else dictionary.Add(task, 1);
         }
 
-        private void AddItemsToPQ()
+        pq = new PriorityQueue<FreqClass, int>(new MaxHeap());
+
+        var time = 0;
+
+        AddItemsToPQ();
+
+        while (pq.Count > 0)
         {
-            foreach (var keyValuePair in dictionary)
+            var list = new List<FreqClass>();
+            var cnt = 0;
+            for (var i = 0; i < n + 1; i++)
             {
-                pq.Enqueue(new FreqClass(keyValuePair.Value, 0, keyValuePair.Key), keyValuePair.Value);
+                if (pq.Count > 0)
+                {
+                    var item = pq.Dequeue(); // Get most frequent item
+                    cnt++;
+                    //Console.WriteLine($"Dequeued {item.Task} with frequency : {item.Frequency}");
+                    item.Frequency--;
+                    if (item.Frequency > 0)
+                        list.Add(item);
+                }
             }
+
+            for (var i = 0; i < list.Count; i++)
+            {
+                var item = list[i];
+                //Console.WriteLine($"Enqueued {item.Task} with frequency : {item.Frequency}");
+                pq.Enqueue(item, item.Frequency);
+            }
+
+            if (pq.Count == 0)
+            {
+                time += cnt;
+            }
+            else
+            {
+                time += n + 1;
+            }
+
+            //Console.WriteLine($"Done with iteration, current time: {time}");
         }
 
-        private class MaxHeap : IComparer<int>
-        {
-            public int Compare(int x, int y)
-            {
-                return y - x;
-            }
-        }
+        return time;
+    }
 
-        private class FreqClass
+    private void AddItemsToPQ()
+    {
+        foreach (var keyValuePair in dictionary)
         {
-            public int Frequency;
-            public int IdleTime;
-            public char Task;
-
-            public FreqClass(int frequency, int idleTime, char task)
-            {
-                Frequency = frequency;
-                IdleTime = idleTime;
-                Task = task;
-            }
+            pq.Enqueue(new FreqClass(keyValuePair.Value, 0, keyValuePair.Key), keyValuePair.Value);
         }
     }
+
+    private class MaxHeap : IComparer<int>
+    {
+        public int Compare(int x, int y)
+        {
+            return y - x;
+        }
+    }
+
+    private class FreqClass
+    {
+        public int Frequency;
+        public int IdleTime;
+        public char Task;
+
+        public FreqClass(int frequency, int idleTime, char task)
+        {
+            Frequency = frequency;
+            IdleTime = idleTime;
+            Task = task;
+        }
+    }
+}
 }
