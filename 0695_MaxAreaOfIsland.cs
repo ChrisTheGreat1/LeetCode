@@ -56,6 +56,36 @@ namespace LeetCode
 
     internal class _0695_MaxAreaOfIsland
     {
+        public int MaxAreaOfIsland(int[][] grid)
+        {
+            int r = grid.Length, c = grid[0].Length, area = 0;
+
+            bool[,] visits = new bool[r, c];
+            for (int i = 0; i < r; i++)
+            {
+                for (int j = 0; j < c; j++)
+                {
+                    area = Math.Max(area, DFSMaxAreaOfIsland(i, j, grid, visits));
+                }
+            }
+
+            return area;
+        }
+
+        private int DFSMaxAreaOfIsland(int row, int col, int[][] grid, bool[,] visits)
+        {
+            int m = grid.Length, n = grid[0].Length;
+            if (row < 0 || row >= m || col < 0 || col >= n || visits[row, col] || grid[row][col] == 0)
+                return 0;
+            visits[row, col] = true;
+            return (1 + DFSMaxAreaOfIsland(row, col + 1, grid, visits) +
+             DFSMaxAreaOfIsland(row, col - 1, grid, visits) +
+             DFSMaxAreaOfIsland(row + 1, col, grid, visits) +
+             DFSMaxAreaOfIsland(row - 1, col, grid, visits));
+        }
+
+        /*
+         
         private int maxArea;
         private int currentArea;
 
@@ -94,7 +124,7 @@ namespace LeetCode
             if (col < 0 || col >= numCols) return;
             if (visited.TryGetValue((row, col), out var _)) return;
 
-            visited.Add((row, col));
+            visited.Add((row, col)); // Overkill - only need to add visited if tile is an island tile
 
             if (grid[row][col] == 1)
             {
@@ -110,5 +140,7 @@ namespace LeetCode
                 DFS(grid, row, col - 1, numRows, numCols, visited);
             }
         }
+
+        */
     }
 }
