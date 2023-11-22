@@ -4,13 +4,13 @@
     {
         static void Main(string[] args)
         {
-            var problem = new _0215_KthLargestElementInAnArray();
+            var problem = new _0621_TaskScheduler();
 
-            // nums = [3,2,1,5,6,4], k = 2
-            var nums = new int[] { 3, 2, 1, 5, 6, 4 };
-            var k = 2;
+            // tasks = ["A","A","A","A","A","A","B","C","D","E","F","G"], n = 2
+            var tasks = new char[] { 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'C', 'D', 'E', 'F', 'G' };
+            var n= 2;
 
-            var result = problem.FindKthLargest(nums, k);
+            var result = problem.LeastInterval(tasks, n);
 
             Console.WriteLine(result);
         }
