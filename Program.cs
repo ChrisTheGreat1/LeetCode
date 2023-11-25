@@ -4,21 +4,12 @@
     {
         static void Main(string[] args)
         {
-            var problem = new _0695_MaxAreaOfIsland();
+            var problem = new _0322_CoinChange();
 
-            int[][] array = new int[][]
-            {
-                new int[] {0,0,1,0,0,0,0,1,0,0,0,0,0},
-                new int[] {0,0,0,0,0,0,0,1,1,1,0,0,0},
-                new int[] {0,1,1,0,1,0,0,0,0,0,0,0,0},
-                new int[] {0,1,0,0,1,1,0,0,1,0,1,0,0},
-                new int[] {0,1,0,0,1,1,0,0,1,1,1,0,0},
-                new int[] {0,0,0,0,0,0,0,0,0,0,1,0,0},
-                new int[] {0,0,0,0,0,0,0,1,1,1,0,0,0},
-                new int[] {0,0,0,0,0,0,0,1,1,0,0,0,0}
-            };
+            var coins = new int[] { 1, 2, 5 };
+            var amount = 11;
 
-            var result = problem.MaxAreaOfIsland(array);
+            var result = problem.CoinChange(coins, amount);
 
             Console.WriteLine(result);
         }
