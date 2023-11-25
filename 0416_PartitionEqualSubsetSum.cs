@@ -40,7 +40,6 @@ namespace LeetCode
             }
             int needsum = sum / 2;
 
-
             bool[] dp = new bool[needsum + 1];
 
             dp[0] = true;

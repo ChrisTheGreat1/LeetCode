@@ -4,12 +4,11 @@
     {
         static void Main(string[] args)
         {
-            var problem = new _0322_CoinChange();
+            var problem = new _0309_BestTimeToBuyAndSellStockWithCooldown();
 
-            var coins = new int[] { 1, 2, 5 };
-            var amount = 11;
+            var prices = new int[] { 1, 2, 3, 0, 2 };
 
-            var result = problem.CoinChange(coins, amount);
+            var result = problem.MaxProfit(prices);
 
             Console.WriteLine(result);
         }
