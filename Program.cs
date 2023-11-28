@@ -4,11 +4,11 @@
     {
         static void Main(string[] args)
         {
-            var problem = new _0309_BestTimeToBuyAndSellStockWithCooldown();
+            var problem = new _0045_JumpGame2();
 
-            var prices = new int[] { 1, 2, 3, 0, 2 };
+            var nums = new int[] { 2, 3, 1, 1, 4 };
 
-            var result = problem.MaxProfit(prices);
+            var result = problem.Jump(nums);
 
             Console.WriteLine(result);
         }
