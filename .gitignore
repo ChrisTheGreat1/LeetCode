@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/C++ Solutions/LeetCodeCpp/LeetCodeCpp.vcxproj
+/C++ Solutions/LeetCodeCpp/LeetCodeCpp.vcxproj.filters
