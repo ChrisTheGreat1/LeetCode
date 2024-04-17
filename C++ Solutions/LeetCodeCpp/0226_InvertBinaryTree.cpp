@@ -18,6 +18,7 @@ The number of nodes in the tree is in the range [0, 100].
 
 */
 
+#include <iostream>
 #include <vector>
 #include <stack>
 #include <string>
