@@ -61,6 +61,20 @@ namespace LeetCode
             return answer;
         }
         */
+		
+		// Explanation:
+		
+		// You want to calculate the product of all elements except for nums[i].
+		
+		// So you can pre-calculate the products in 2 seperate arrays, then perform the computation "after" the arrays have been pre-calculated.
+		
+		// First array is the prefix array, which is the product of elements at index 1, 1&2, 1&2&3, 1&2&3&4 for an array of size 4.
+		// You can calculate this by multiplying the current index element with the previous index element.
+		
+		// Second array is postfix array, which is the same thing but working backwards (ex. index 4, 4&3, 4&3&2, 4&3&2&1).
+		
+		// Then you can get the final result by multiplying the left-side prefix index element with the right-side postfix index element.
+		// Ex. for result index 1, multiply result of prefix index 0 with postfix index 2
 
         public int[] ProductExceptSelf(int[] nums)
         {
